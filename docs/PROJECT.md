@@ -46,28 +46,6 @@ All of this is long-term vision only. The project starts with very small experim
 - Develop deep engineering understanding while building it.
 - Keep the project resumable at any stable point.
 
-## Private and public strategy
-
-Ingenium stays **private during the experimental phase**. The private repository is a laboratory and may contain proofs of concept, unstable code, personal integrations, hardware-specific code, architectural experiments and incomplete features.
-
-When Ingenium looks more like a product, a public version may exist:
-
-```text
-Ingenium Private
-      │  experimentation
-      ↓
-  validation
-      │
-      ↓
-Ingenium Public
-```
-
-A feature is promoted to the public version only when it is sufficiently understood, tested, documented, stable, safe and generalizable. "Stable" does not automatically mean "public".
-
-Some private parts may never become public: internal IPs, home configuration, cameras, credentials, personal automations and residential infrastructure details.
-
-> Private = laboratory. Public = product.
-
 ## Scope
 
 In scope now: Genesis, the first phase (see [ROADMAP.md](ROADMAP.md)).

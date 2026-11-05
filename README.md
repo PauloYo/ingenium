@@ -230,29 +230,6 @@ Ingenium
 
 The goal is not merely to execute scripts, but to eventually allow intelligent agents to perceive, reason and interact with the physical environment through controlled integrations.
 
-## Public and Private Evolution
-
-Ingenium may eventually have both experimental and public-facing forms.
-
-Experimental development may contain:
-
-- proof-of-concepts;
-- unstable features;
-- hardware-specific integrations;
-- personal automations;
-- architectural experiments.
-
-A future public version should contain functionality that is sufficiently:
-
-- understood;
-- tested;
-- documented;
-- stable;
-- safe to distribute;
-- useful outside a personal environment.
-
-Personal infrastructure and sensitive configuration may remain permanently private.
-
 ## Guiding Principle
 
 Ingenium should become more capable over time.
