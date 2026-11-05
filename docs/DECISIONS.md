@@ -20,28 +20,21 @@ Format: id, title, status, context, decision, consequences.
 - **Decision:** The repository is the official memory. Conclusions from conversations are consolidated in `docs/`.
 - **Consequences:** Documentation must be kept current, especially `STATUS.md`. Chat history is never required to resume the project.
 
-## D-003 — Private during experimentation
-
-- **Status:** Accepted
-- **Context:** Early work includes unstable code, personal integrations and sensitive configuration.
-- **Decision:** Ingenium stays private during the experimental phase. A public version may come later with promoted, validated features.
-- **Consequences:** Promotion to public requires features to be understood, tested, documented, stable, safe and generalizable.
-
-## D-004 — Start without an LLM
+## D-003 — Start without an LLM
 
 - **Status:** Accepted
 - **Context:** The first goal is to prove an extensible system exists.
 - **Decision:** Genesis starts without any LLM.
 - **Consequences:** Early capabilities are deterministic skills such as `system_status`. No AI provider keys or SDKs are needed yet.
 
-## D-005 — Initial language: Python
+## D-004 — Initial language: Python
 
 - **Status:** Accepted
 - **Context:** Ingenium will explore AI, vision, audio, automation, APIs and hardware.
 - **Decision:** Python is the initial implementation language.
 - **Consequences:** Other languages (for example C/C++ for firmware, Rust where justified) may be introduced when a concrete need appears.
 
-## D-006 — Avoid premature infrastructure decisions
+## D-005 — Avoid premature infrastructure decisions
 
 - **Status:** Accepted
 - **Context:** Heavy infrastructure and hardware purchases based on imagined needs add cost and complexity.

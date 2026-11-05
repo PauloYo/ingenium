@@ -8,21 +8,18 @@ _Where are we now? Read this first when resuming the project._
 
 ## Current objective
 
-Prepare the smallest possible environment to start implementation, then create the first minimal execution of Ingenium in Python. No LLM, no agent frameworks, no hardware.
+Close G0 by verifying the documented setup and first execution on Windows.
 
 ## What works
 
-- Repository with the base structure (`docs/`, `src/`, `tests/`) and project documentation.
-- No runtime code exists yet.
+- The project pins Python 3.14.10 and uv 0.13.7.
+- The Python 3.14.10 interpreter in the local virtual environment runs `src/main.py`, prints `Ingenium ready.` and exits successfully.
 
 ## In progress
 
-- G0: deciding, step by step, what the minimal Python setup needs and why.
-
-## Known issues
-
-- None.
+- Verify the locked setup using the commands in the [README](../README.md).
+- Confirm that the Windows smoke test passes on the G0 pull request.
 
 ## Next step
 
-Discuss and create the first minimal Python entry point inside `src/`, so that Python can run the project (end of G0). Before creating each element, discuss why it exists, what responsibility it has and whether it is needed now.
+After G0 passes these checks, start G1 by adding a terminal loop that accepts multiple text commands, ignores empty input and exits on `exit`. Use a simple acknowledgement to verify input handling. The first isolated capability belongs to G2.
