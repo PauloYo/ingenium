@@ -40,3 +40,17 @@ Format: id, title, status, context, decision, consequences.
 - **Context:** Heavy infrastructure and hardware purchases based on imagined needs add cost and complexity.
 - **Decision:** Ingenium runs on existing hardware until real workloads justify more. The architecture should not assume everything runs on one machine, but should not build distribution early either.
 - **Consequences:** Server, GPU and multi-node decisions are deferred.
+
+## D-006 — Reproducible G0 reference environment
+
+- **Status:** Accepted
+- **Context:** G0 needs Ingenium to run the same way on any machine, starting with Windows.
+- **Decision:** The G0 reference environment uses Python 3.14.10 and uv 0.13.7, with the versions and the lockfile (`uv.lock`) recorded in Git.
+- **Consequences:** Setup uses `uv sync --locked`. Changing the Python or uv version is a deliberate, versioned change.
+
+## D-007 — CI smoke test and advisory Claude Code review
+
+- **Status:** Accepted
+- **Context:** Each pull request needs objective verification and a review that supports learning without taking control away from the maintainer.
+- **Decision:** CI runs the smoke test. Claude Code reviews the same SHA and delivers an advisory report outside the Git history. The person responsible for the pull request decides which suggestions to apply.
+- **Consequences:** The reviewer does not change code, commit, push, comment or merge. Reports are downloaded as workflow artifacts.
