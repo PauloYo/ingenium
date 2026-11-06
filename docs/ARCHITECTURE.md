@@ -1,8 +1,6 @@
 # Ingenium Architecture
 
-No stable architecture has been implemented yet.
-
-The first architectural model will emerge during Genesis.
+`src/main.py` is the current entry point. It prints `Ingenium ready.` once and exits.
 
 See [STATUS.md](STATUS.md) for the current implementation state and [DECISIONS.md](DECISIONS.md) for accepted project decisions.
 
