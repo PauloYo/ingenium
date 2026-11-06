@@ -1,0 +1,50 @@
+name: Genesis G0
+
+on:
+  push:
+    branches: [main]
+  # PRs rodam esta CI pelo workflow PR Review (.github/workflows/pr-review.yml),
+  # que repassa o SHA exato da PR e entrega os resultados ao revisor.
+  workflow_call:
+    inputs:
+      ref:
+        description: SHA a verificar. Vazio usa o commit do evento.
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref }}
+          persist-credentials: false
+
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.13.7"
+
+      - name: Instalar ambiente travado (uv sync --locked)
+        run: uv sync --locked
+
+      - name: Verificar versão do Python (.python-version)
+        shell: pwsh
+        run: |
+          $expected = (Get-Content .python-version -Raw).Trim()
+          $version = uv run --locked python --version
+          if ($LASTEXITCODE -ne 0 -or $version -ne "Python $expected") {
+            throw "Esperado Python $expected. Obtido: $version"
+          }
+
+      - name: Verificar saída "Ingenium ready."
+        shell: pwsh
+        run: |
+          $output = uv run --locked python src/main.py
+          if ($LASTEXITCODE -ne 0 -or $output -ne "Ingenium ready.") {
+            throw "Saída inesperada: $output"
+          }

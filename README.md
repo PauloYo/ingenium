@@ -164,6 +164,20 @@ These documents exist to make the project understandable and resumable even afte
 
 Chat history should never be required to reconstruct the state or philosophy of Ingenium.
 
+## Run locally
+
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) version 0.13.7. Open PowerShell in the repository root and run:
+
+```powershell
+uv sync --locked
+uv run --locked python --version
+uv run --locked python src/main.py
+```
+
+The last two commands should print `Python 3.14.10` and `Ingenium ready.`, respectively. The program then exits.
+
+The Python version comes from `.python-version`. The `uv sync --locked` command creates the local `.venv/` environment and checks that `uv.lock` matches the project configuration.
+
 ## Technology Direction
 
 Python is the initial implementation language due to its ecosystem and low friction for areas that Ingenium is expected to explore, including:
