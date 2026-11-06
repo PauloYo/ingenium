@@ -41,10 +41,7 @@ jobs:
             throw "Esperado Python $expected. Obtido: $version"
           }
 
-      - name: Verificar saída "Ingenium ready."
+      - name: Verificar saída do Pytest
         shell: pwsh
         run: |
-          $output = uv run --locked python src/main.py
-          if ($LASTEXITCODE -ne 0 -or $output -ne "Ingenium ready.") {
-            throw "Saída inesperada: $output"
-          }
+          uv run --locked pytest -v --maxfail=1 --disable-warnings
