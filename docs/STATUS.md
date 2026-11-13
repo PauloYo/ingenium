@@ -4,22 +4,22 @@ _Where are we now? Read this first when resuming the project._
 
 ## Current phase
 
-**Genesis — G0: Repository Foundation**
+**Genesis — G2: First Skill** (G1 concluído, aguardando merge do PR para `main`)
 
 ## Current objective
 
-Close G0 by verifying the documented setup and first execution on Windows.
+Run an isolated capability (candidate: `system_status`) from the terminal loop, without putting its logic inside `src/main.py`.
 
 ## What works
 
-- The project pins Python 3.14.10 and uv 0.13.7.
-- The Python 3.14.10 interpreter in the local virtual environment runs `src/main.py`, prints `Ingenium ready.` and exits successfully.
+- G0 landed on `main` in PR #2. The reference environment pins Python 3.14.10 and uv 0.13.7.
+- G1 is implemented on `genesis/g1-input`: `src/main.py` prints `Ingenium ready.` once, accepts multiple non-empty commands in the same session, ignores blank input and exits on `exit` or end of input. Both tests in `tests/test_cli.py` pass.
+- The merged GitHub Actions workflow runs the Windows smoke test and uses Claude Code to provide advisory PR reports and documentation patches as downloadable artifacts.
 
-## In progress
+## Pending workflow change
 
-- Verify the locked setup using the commands in the [README](../README.md).
-- Confirm that the Windows smoke test passes on the G0 pull request.
+The merged workflow still requests a Claude review on eligible PR pushes. The agreed simplification is to keep CI on each PR push and run Claude when a PR is ready for review or on demand. Track this as a separate workflow change.
 
 ## Next step
 
-After G0 passes these checks, start G1 by adding a terminal loop that accepts multiple text commands, ignores empty input and exits on `exit`. Use a simple acknowledgement to verify input handling. The first isolated capability belongs to G2.
+Merge the G1 PR into `main`. Then implement the first isolated capability (`system_status`) behind a lookup, so the main flow does not change. The architectural test for G3 is adding a second skill without changing the central flow.

@@ -53,4 +53,5 @@ Format: id, title, status, context, decision, consequences.
 - **Status:** Accepted
 - **Context:** Each pull request needs objective verification and a review that supports learning without taking control away from the maintainer.
 - **Decision:** CI runs the smoke test. Claude Code reviews the same SHA and delivers an advisory report outside the Git history. The person responsible for the pull request decides which suggestions to apply.
-- **Consequences:** The reviewer does not change code, commit, push, comment or merge. Reports are downloaded as workflow artifacts.
+- **Consequences:** The reviewer delivers `review.md` and, when applicable, `docs.patch` as workflow artifacts. The maintainer applies selected changes and merges the PR.
+- **Agreed follow-up:** Keep CI on every PR push and run Claude when a PR is ready for review or on demand. This reduces repeated reviews. The trigger change is pending.
