@@ -2,7 +2,9 @@
 name = "ingenium"
 version = "0.1.0"
 requires-python = ">=3.14,<3.15"
-dependencies = []
+dependencies = [
+    "psutil>=7.2.2",
+]
 
 [tool.uv]
 required-version = "==0.13.7"
